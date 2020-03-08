@@ -1,0 +1,93 @@
+body {
+    background-color: yellow;
+}
+
+h1, h2 {
+    /* ukuran font */
+    font-size: 60px;
+    /* font rata tengah */
+    text-align: center;
+    /* jenis font */
+    font-family: arial;
+    /* jara antar elemen */
+    margin: 10px;
+}
+
+button {
+    /* gaya tampilan block */
+    display: block;
+    /* jarak antar elemen */
+    margin: auto;
+}
+
+.container {
+    /* lebar */
+    width: 600px;
+    /* supaya ketengah */
+    margin: auto; 
+    /* garis border */
+    /* border: 1px solid black; */
+    /* merubah cursor ketika masuk ke elemen class container */
+    cursor: url(../img/palu1.png), auto;
+}
+
+.container:active {
+    /* merubah cursor ketika masuk ke elemen class container */
+    cursor: url(../img/palu2.png), auto;
+}
+
+.tanah {
+    /* lebar */
+    width: 200px;
+    /* tinggi */
+    height: 200px;
+    /* posisi wadah tanah */
+    position: relative;
+    /* jika melewati batas container akan dihidden*/
+    overflow: hidden;
+    /* memberikan efek float ke kiri */
+    float: left;
+}
+
+/* elemen baru yang menempel kedalam elemen tanah */
+.tanah::after {
+    /* kosongkan content default */
+    content: '';
+    /* tampilan dengan gaya block */
+    display: block;
+    /* lebar */
+    width: 200px;
+    /* tinggi */
+    height: 100px;
+    /* gambar tanah dalam folder img */
+    background: url(../img/tanah.png) bottom center no-repeat;
+    /* ukuran gambar background */
+    background-size: 80%;
+    /* posisi gambar absolute */
+    position: absolute;
+    /* jarak bagian bawah */
+    bottom: -25px;
+}
+
+.tikus {
+    /* lebar */
+    width: 100%;
+    /* tinggi */
+    height: 100%;
+    /* gambar tikus dalam folder img */
+    background: url(../img/tikus.png) bottom center no-repeat;
+     /* ukuran gambar tikus */
+     background-size: 60%;
+     /* posisi gambar absolute */
+     position: absolute;
+     /* jarak bagian atas / top */
+     top: 150px;
+     /* efek transisi ketika tikus muncul */
+     transition: top 0.3s;
+}
+
+/* munculkan tikus */
+.tanah.muncul .tikus {
+    /* jarak pada saat tikus muncul */
+    top: -15px;
+}
